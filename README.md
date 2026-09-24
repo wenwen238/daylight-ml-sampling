@@ -1,6 +1,6 @@
 # Fixed 560-case ML sampling set
 
-`final_sampling.py` creates a reproducible set of 560 design cases for the ML daylight workflow. It is separate from the existing manually configured CNN datasets. The earlier 50-case files remain in this folder as a workflow pilot and are not overwritten.
+`final_sampling.py` creates a reproducible set of 560 design cases for the ML daylight workflow.
 
 ## Sampling logic
 
@@ -15,6 +15,11 @@
 
 The final dataset therefore has 560 cases. Every defined discrete design stratum appears exactly 10 times.
 
+## Requirements
+
+- Python 3.9 or later
+- No third-party Python packages are required
+
 ## Create the fixed case files
 
 ```powershell
@@ -26,4 +31,4 @@ The script produces:
 - `fixed_design_cases_560.csv` — a flat table for review and later ML preprocessing;
 - `fixed_design_cases_560.json` — the same cases with window and overhang geometry for later simulation scripts.
 
-After the files are created, the script refuses to overwrite them. This protects the meaning of every `model_XX` identifier. Only use `--overwrite` before starting simulations and only when you deliberately want a new fixed set.
+After the files are created, the script refuses to overwrite them. This protects the meaning of every `model_001–model_560` identifier. Only use `--overwrite` before starting simulations and only when you deliberately want a new fixed set.
